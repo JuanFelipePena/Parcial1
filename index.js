@@ -52,8 +52,15 @@ function cargarComida(element) {
     var fila = document.getElementsByClassName("row")[0];
     let productos = element.products;
 
+    let hijos = fila.children
+    let length = hijos.length
+
+for(let i = 0; i <length; i++) {
+    fila.removeChild(hijos[0]);
+}
+
     for(let i = 0; i < productos.length; i++) {
-        
+        fila.insertAdjacentHTML('beforeend', `<div class="col"></div>`);
         celda = fila.children[i]
         celda.innerHTML = `<img src="${productos[i].image}" height="100" width="100">
         <h3>${productos[i].name}</h3>
@@ -100,6 +107,7 @@ for(let i = 0; i <length; i++) {
   </thead>`);
   tabla.insertAdjacentHTML('beforeend', `<tbody></tbody>`)
 
+  let total = 0
 for(let i = 0; i <carrito.items.length; i++) {
     
     tabla.insertAdjacentHTML('beforeend', `<tr>
@@ -108,36 +116,24 @@ for(let i = 0; i <carrito.items.length; i++) {
     <td>${carrito.items[i].name}</td>
     <td>${carrito.items[i].price}</td>
     <td>sumatoria</td>
-    <td>boton</td>
+    <td><button type="button" class="btn btn-dark">-</button> <button type="button" class="btn btn-dark">+</button> </td>
   </tr>`);
-
+  tabla.lastElementChild.addEventListener("click", function(){agregarAlimento()}, false);
+  total += carrito.items[i].price
 }
-
-tabla.insertAdjacentHTML('afterend', `<button type="button" class="btn btn-danger align: right">Cancel</button>`);
+tabla.insertAdjacentHTML('afterend', `<h3>Total: ${total}</h3>`);
+tabla.insertAdjacentHTML('afterend', `<button type="button" data-target="#basicModal" data-toggle="modal" class="btn btn-danger">Cancel</button>`);
 let boton = tabla.nextElementSibling
 boton.addEventListener("click", function(){modalCancelarOrden()}, false);
 }
 
 function modalCancelarOrden() {
-    console.log("xd")
+    console.log("RIP crear el modal")
     let body = document.getElementsByTagName("body")[0];
     console.log(body)
-    body.insertAdjacentHTML('beforeend', `<div id="myModal" class="modal fade" role="dialog">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title">Modal Header</h4>
-        </div>
-        <div class="modal-body">
-          <p>Some text in the modal.</p>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        </div>
-      </div>
-  
-    </div>
-  </div>`);
+}
 
+function agregarAlimento(alimento) {
+    //carrito.items.push(alimento)
+    //cargarOrden()
 }
