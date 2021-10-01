@@ -1,16 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-  <script src="https://unpkg.com/bootstrap-table@1.16.0/dist/bootstrap-table.min.js"></script>
-  <link rel="stylesheet" href="https://s3-us-west-2.amazonaws.com/colors-css/2.2.0/colors.min.css">
-  <head>
-      <title>Document</title>
-  </head>
-  <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      </nav>
-    <script src="index.js"></script>
-  </body>
+  <link rel="stylesheet" href="indexStyle.css">
+
+  <!-- Barra de cabeza (carrito) -->
+<header><div class="container">
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container">
+    <a class="navbar-brand" href="#">Restaurant & Lounge</a>
+    <div class="collapse navbar-collapse" id="navbarResponsive"></div>
+      <li class="nav-item" >
+        <a id= navCarrito class="nav-link" href="#">
+          <img id="carrito" src="https://i.imgur.com/1EKrQIi.png" alt="CarritoCompras">
+          <p id=navNumItems>0 items</p>
+        </a>
+  </div>
+</nav>
+<hr/>
+
+ <!-- Imagen de cabeza (hamburguesa) -->
+ <img src="http://i.imgur.com/S8Ffdqa.png" class="img-fluid">
+<hr/>
+
+<!-- Navegacion -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="navbar-nav"></div>
+</nav>
+<hr/>
+
+</div></header>
+
+
+<body>
+
+<!-- Nombre de comida seleccionada -->
+<h2 id="tituloComida"></h2>
+<hr/>
+
+<div id=contenedorBody class="container">
+  <div class="row">
+    <div class="col"></div>
+    <div class="col"></div>
+    <div class="col"></div>
+    <div class="col"></div>
+    <div class="col"></div>
+    <div class="col"></div>
+    <div class="col"></div>
+  </div>
+</div>
+
+  <script src="index.js"></script>
+</body>
+
+<!-- Footer -->
+<footer class="text-center text-lg-start text-muted">Contact us: +57 3102105253 - info@restaurant.com - @restaurant</footer>
+
 
 </html>

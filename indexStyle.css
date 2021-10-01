@@ -1,0 +1,18 @@
+@import url('https://fonts.googleapis.com/css?family=Satisfy');
+
+
+.navbar-brand { font: 20pt Satisfy}
+
+/* linea divisora */
+#carrito {
+  width: 40px
+  
+}
+
+#tituloComida {
+  text-align: center;
+}
+
+.col-sm > img {
+  width: 400px
+}
